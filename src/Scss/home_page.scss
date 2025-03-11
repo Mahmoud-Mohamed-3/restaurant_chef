@@ -1,0 +1,9 @@
+@use 'variables' as *;
+.HomePageContainer{
+  display: flex;
+    flex-direction: row;
+.OutLetContainer{
+  width: 100%;
+  padding: 20px;
+}
+}

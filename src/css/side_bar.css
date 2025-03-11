@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.SideBarContainer {
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f7f7f7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+.SideBarContainer .Info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #ff6600;
+}
+.SideBarContainer .Info .Avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #ffbe33;
+}
+.SideBarContainer .Links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.SideBarContainer .Links a {
+  text-decoration: none;
+  color: #ff6600;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  padding: 25px;
+  width: 100%;
+  text-align: center;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.SideBarContainer .Links a.active {
+  color: #ffbe33;
+  background-color: #f7f7f7;
+  font-weight: bold;
+  -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.SideBarContainer .Links a.active::before {
+  content: "";
+  width: 5px;
+  height: 100%;
+  background-color: #ffbe33;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px 0 0 12px;
+}
+.SideBarContainer .Links a:hover {
+  color: #ffbe33;
+  background-color: #ffefcc;
+}
+.SideBarContainer .ProfileActions {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.SideBarContainer .ProfileActions .Logout {
+  background-color: red;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 1.2rem;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 7px;
+}
+.SideBarContainer .ProfileActions .Logout:hover {
+  background-color: #cc0000;
+}

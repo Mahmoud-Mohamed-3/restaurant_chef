@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.CategoryPage {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.CategoryPage .PageTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ffbe33;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  font-family: "Dancing Script", cursive;
+  text-transform: uppercase;
+}
+.CategoryPage .CreateButton {
+  background-color: #ffbe33;
+  color: white;
+  border: none;
+}
+.CategoryPage .CreateButton:hover {
+  background-color: #ffae00;
+}
+.CategoryPage .CreateButton :where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+  background-color: #ffae00;
+}
+.CategoryPage .CategoryContainer {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.CategoryPage .CategoryContainer .Header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.CategoryPage .CategoryContainer .Header h2 {
+  font-size: 1.8rem;
+  font-family: "Open Sans", sans-serif;
+  padding-bottom: 15px;
+  text-align: center;
+  color: #ff6600;
+}
+.CategoryPage .CategoryContainer .ant-table {
+  border-radius: 10px;
+}
+.CategoryPage .CategoryContainer .ant-table-thead > tr > th {
+  background-color: #ffbe33;
+  color: white;
+  font-size: 1rem;
+}
+.CategoryPage .CategoryContainer .ant-table-tbody > tr > td {
+  font-size: 0.95rem;
+}
+
+.FoodDetails h2, .EditFoodModal h2 {
+  font-size: 2.6rem;
+  color: #242424;
+  margin-bottom: 15px;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+.FoodDetails img, .EditFoodModal img {
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.FoodDetails h3, .EditFoodModal h3 {
+  font-size: 1.2rem;
+  color: #ff6600;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.FoodDetails ul, .EditFoodModal ul {
+  list-style-type: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 7px;
+}
+.FoodDetails ul li, .EditFoodModal ul li {
+  background: #ff6600;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.ant-form-item {
+  margin-bottom: 15px;
+}
+
+.ant-space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ant-btn-dangerous {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+}
+.ant-btn-dangerous:hover {
+  background: darkred;
+}
+
+.ant-btn-primary {
+  background: #ffbe33;
+  border: none;
+}
+.ant-btn-primary:hover {
+  background: #ffae00;
+}
+
+:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active a {
+  color: #ffbe33;
+}
+
+:where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover {
+  background-color: #ffae00;
+}

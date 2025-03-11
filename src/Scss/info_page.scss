@@ -1,0 +1,76 @@
+@use "variables" as *;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.ChefInfoPage {
+  max-width: 900px;
+  margin: 50px auto;
+  //padding: 20px;
+  border-radius: 12px;
+  //box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  .PageTitle {
+    font-family: $main_font_family;
+    color: $second_color;
+    font-size: 3rem;
+    width: fit-content;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    text-transform: uppercase;
+  }
+
+  .ChefInfoContainer {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column; // changed to column layout
+    align-items: center;
+    justify-content: space-between;
+
+    .ChefImage {
+      width: 205px;
+      height: 205px;
+      border-radius: 50%;
+      background-color: $second_color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .ChefInfo {
+      margin-top: 20px;
+      width: 100%; // Ensure the info section takes up the full width
+      //text-align: left; // Align text to the left for better readability
+
+      .Info {
+        margin-bottom: 20px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+          color: $main_color;
+          font-family: $consolas_font_family;
+          text-transform: uppercase;
+        }
+        p {
+          font-size: 1.7rem;
+          color: $second_color;
+          margin-top: 5px;
+          font-family: $main_font_family;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.OrdersPage {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+.OrdersPage .PageTitle {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffbe33;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  font-family: "Dancing Script", cursive;
+}
+.OrdersPage .FilterContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 20px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.OrdersPage .FilterContainer label {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #ff6600;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.OrdersPage .FilterContainer select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.OrdersPage .FilterContainer select:focus {
+  outline: none;
+  border-color: #ffbe33;
+}
+.OrdersPage .FilterContainer .SortButton {
+  padding: 8px 12px;
+  background: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.OrdersPage .FilterContainer .SortButton:hover {
+  background: #cc5200;
+}
+.OrdersPage .OrdersTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.OrdersPage .OrdersTable th,
+.OrdersPage .OrdersTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.OrdersPage .OrdersTable th {
+  background: #ffbe33;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.OrdersPage .OrdersTable .ItemName {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  color: #ff6600;
+}
+.OrdersPage .OrdersTable .ItemPrice {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.3rem;
+}
+.OrdersPage .OrdersTable .Status {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.4rem;
+}
+.OrdersPage .OrdersTable .Status.ready {
+  color: green;
+}
+.OrdersPage .OrdersTable .Status.pending {
+  color: orange;
+}
+.OrdersPage .OrdersTable .StatusButton {
+  padding: 8px 12px;
+  background: #ffbe33;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.OrdersPage .OrdersTable .StatusButton:hover {
+  background: #ffae00;
+}
+.OrdersPage .NoOrders {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.Pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.Pagination :where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active a {
+  background-color: #ffbe33;
+  border-color: #ffbe33;
+  color: white;
+}
+
+:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active {
+  border-color: #ffbe33;
+}
+:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active:hover {
+  border-color: #ffbe33;
+}

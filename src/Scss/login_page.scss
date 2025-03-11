@@ -1,0 +1,187 @@
+@use "variables" as *;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.LoginPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+    background-color: $black_color_bg;
+  .Welcome{
+  font-family: $main_font_family;
+    font-size: 3rem;
+    color: $main_color;
+    margin-bottom: 1rem;
+  }
+  .LoginFormContainer{
+    width: 600px;
+    max-width: 400px;
+    padding: 1rem;
+    border: 1px solid $main_color;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    //border: 1px solid rgba(255, 255, 255, 0.2);
+    .LoginFormTitle{
+        font-family: $main_font_family;
+        font-size: 1.7rem;
+        color: $main_color;
+        margin-bottom: 1rem;
+      text-align: center;
+    }
+    .LoginForm {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        color: $second_color;
+        font-family: $second_font_family;
+        letter-spacing: 1px;
+        font-weight: 700;
+      }
+
+      input {
+        font-family: $second_font_family;
+        background-color: rgba(255, 255, 255, 0.4);
+        border: none;
+        border-bottom: 1px solid $main_color;
+        color: #222;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-within {
+          outline: none;
+          border-bottom: 1px solid $main_color;
+        }
+
+        &:active {
+          border-bottom: 1px solid $main_color;
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+      }
+      :where(.css-dev-only-do-not-override-1v613y0).ant-input-affix-wrapper
+      > input.ant-input {
+        background-color: rgba(255, 255, 255, 0.004);
+        border: none;
+        &:focus {
+          outline: none;
+          border: none;
+        }
+      }
+
+      :where(
+    .css-dev-only-do-not-override-1v613y0
+  ).ant-input-outlined.ant-input-status-error:not(
+    .ant-input-disabled
+  ):focus-within {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined{
+        background-color: rgba(255, 255, 255, 0.4);
+        border: none;
+        border-bottom: 1px solid $main_color;
+        color: white;
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.4);
+        }
+        &:focus {
+          outline: none;
+        }
+        &:focus-within {
+          outline: none;
+          border-bottom: 1px solid $main_color;
+        }
+        > input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $main_color;
+          color: white;
+          &:focus {
+            outline: none;
+          }
+          &:focus-within {
+            outline: none;
+            border-bottom: 1px solid $main_color;
+          }
+        }
+      }
+
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:hover{
+        border-color: $main_color;
+      }
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:focus-within {
+        border-color: $main_color;
+        background-color:rgba(255, 255, 255, 0.4) ;
+      }
+
+
+
+      #password {
+        background-color: transparent;
+        border: none;
+        border-color: transparent;
+        color: white;
+        &:focus {
+          outline: none;
+        }
+        &:focus-within {
+          outline: none;
+          border: none;
+        }
+      }
+      :where(.css-dev-only-do-not-override-1v613y0).ant-input-outlined {
+        font-family: $second_font_family;
+        background-color: rgba(255, 255, 255, 0.004);
+        border: none;
+        border-bottom: 1px solid $main_color;
+        color: white;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus-within {
+          outline: none;
+          border-bottom: 1px solid $main_color;
+        }
+
+    }
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus-within {
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled){
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+      :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover{
+        background-color: rgba(255, 255, 255, 0.4);
+      }
+      .LoginButton {
+        display: flex;
+        justify-content: center;
+        font-family: $main_font_family;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding: 10px 30px;
+        border: none;
+        background-color: $main_color;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 0 auto;
+
+        &:hover {
+          background-color: darken($main_color, 10%);
+        }
+      }
+    }
+  }
+}

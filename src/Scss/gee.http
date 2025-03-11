@@ -1,0 +1,23 @@
+### GET request to example server
+GET https://examples.http-client.intellij.net/get
+    ?generated-in=WebStorm
+
+###
+
+POST http://127.0.0.1:3000/chefs/sign_in
+Content-Type: application/json
+
+{
+  "chef": {
+    "login": "pasta_chef@gmail.com",
+    "password": "12345678"
+  }
+}
+
+
+###
+
+GET http://127.0.0.1:3000/api/v1/chef
+
+###
+GET http://127.0.0.1:3000/api/v1/chef/show_all_orders

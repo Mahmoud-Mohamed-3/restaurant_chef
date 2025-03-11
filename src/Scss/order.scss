@@ -1,0 +1,145 @@
+@use "variables" as *;
+
+.OrdersPage {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+
+  .PageTitle {
+    text-align: center;
+    font-size: 3rem;
+    color: $main_color;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-family: $main_font_family;
+  }
+
+  .FilterContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    align-items: center;
+
+    label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: $second_color;
+      font-family: $consolas_font_family;
+    }
+
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+        border-color: $main_color;
+      }
+    }
+
+    .SortButton {
+      padding: 8px 12px;
+      background: $second_color;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+
+      &:hover {
+        background: darken($second_color, 10%);
+      }
+    }
+  }
+
+  .OrdersTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+    th,
+    td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: $main_color;
+      color: #fff;
+      font-family: $roboto_font_family;
+    }
+    .ItemName {
+      font-family: $consolas_font_family;
+      color: $second_color;
+    }
+    .ItemPrice {
+      font-family: $main_font_family;
+      font-size: 1.3rem;
+    }
+    .Status {
+      font-weight: bold;
+      text-transform: uppercase;
+      text-align: center;
+      font-family: $main_font_family;
+      font-size: 1.4rem;
+      &.ready {
+        color: green;
+        //background-color: green;
+      }
+      &.pending {
+        color: orange;
+        //background-color: orange;
+      }
+    }
+
+    .StatusButton {
+      padding: 8px 12px;
+      background: $main_color;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+
+      &:hover {
+        background: darken($main_color, 10%);
+      }
+    }
+  }
+
+  .NoOrders {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #888;
+  }
+}
+
+.Pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  :where(.css-dev-only-do-not-override-240cud).ant-pagination
+    .ant-pagination-item-active
+    a {
+    background-color: $main_color;
+    border-color: $main_color;
+    color: white;
+  }
+}
+
+:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active {
+  border-color: $main_color;
+  &:hover{
+    border-color: $main_color;
+  }
+}

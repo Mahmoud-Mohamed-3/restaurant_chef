@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.LoginPage {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: rgb(48, 48, 48);
+}
+.LoginPage .Welcome {
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  color: #ffbe33;
+  margin-bottom: 1rem;
+}
+.LoginPage .LoginFormContainer {
+  width: 600px;
+  max-width: 400px;
+  padding: 1rem;
+  border: 1px solid #ffbe33;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+}
+.LoginPage .LoginFormContainer .LoginFormTitle {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.7rem;
+  color: #ffbe33;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.LoginPage .LoginFormContainer .LoginForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.LoginPage .LoginFormContainer .LoginForm label {
+  color: #ff6600;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+.LoginPage .LoginFormContainer .LoginForm input {
+  font-family: "Open Sans", sans-serif;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-bottom: 1px solid #ffbe33;
+  color: #222;
+}
+.LoginPage .LoginFormContainer .LoginForm input:focus {
+  outline: none;
+}
+.LoginPage .LoginFormContainer .LoginForm input:focus-within {
+  outline: none;
+  border-bottom: 1px solid #ffbe33;
+}
+.LoginPage .LoginFormContainer .LoginForm input:active {
+  border-bottom: 1px solid #ffbe33;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-affix-wrapper > input.ant-input {
+  background-color: rgba(255, 255, 255, 0.004);
+  border: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-affix-wrapper > input.ant-input:focus {
+  outline: none;
+  border: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus-within {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: none;
+  border-bottom: 1px solid #ffbe33;
+  color: white;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:focus {
+  outline: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:focus-within {
+  outline: none;
+  border-bottom: 1px solid #ffbe33;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined > input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ffbe33;
+  color: white;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined > input:focus {
+  outline: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined > input:focus-within {
+  outline: none;
+  border-bottom: 1px solid #ffbe33;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:hover {
+  border-color: #ffbe33;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined:focus-within {
+  border-color: #ffbe33;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm #password {
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+  color: white;
+}
+.LoginPage .LoginFormContainer .LoginForm #password:focus {
+  outline: none;
+}
+.LoginPage .LoginFormContainer .LoginForm #password:focus-within {
+  outline: none;
+  border: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-outlined {
+  font-family: "Open Sans", sans-serif;
+  background-color: rgba(255, 255, 255, 0.004);
+  border: none;
+  border-bottom: 1px solid #ffbe33;
+  color: white;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-outlined:focus {
+  outline: none;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-1v613y0).ant-input-outlined:focus-within {
+  outline: none;
+  border-bottom: 1px solid #ffbe33;
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus-within {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm :where(.css-dev-only-do-not-override-240cud).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.LoginPage .LoginFormContainer .LoginForm .LoginButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: none;
+  background-color: #ffbe33;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin: 0 auto;
+}
+.LoginPage .LoginFormContainer .LoginForm .LoginButton:hover {
+  background-color: #ffae00;
+}

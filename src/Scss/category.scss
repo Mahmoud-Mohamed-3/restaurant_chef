@@ -1,0 +1,149 @@
+@use "variables" as *;
+
+.CategoryPage {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+
+  .PageTitle {
+    text-align: center;
+    font-size: 2.2rem;
+    color: $main_color_dark;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    font-family: $main_font_family;
+    text-transform: uppercase;
+  }
+
+
+
+  .CreateButton {
+    background-color: $main_color_dark;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: darken($main_color_dark, 10%);
+    }
+    :where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover{
+        background-color: darken($main_color_dark, 10%);
+    }
+  }
+
+  .CategoryContainer {
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.Header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    align-items: center;
+  h2 {
+    font-size: 1.8rem;
+    font-family: $second_font_family;
+    padding-bottom: 15px;
+    text-align: center;
+    color: $second_color;
+  }
+}
+
+
+    .ant-table {
+      border-radius: 10px;
+    }
+
+    .ant-table-thead > tr > th {
+      background-color: $main_color;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .ant-table-tbody > tr > td {
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Modals (View & Edit)
+.FoodDetails, .EditFoodModal {
+  h2 {
+    font-size: 2.6rem;
+    color: $black_color;
+    margin-bottom: 15px;
+    font-family: $main_font_family;
+    text-align: center;
+  }
+
+  img {
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    color: $second_color;
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px;
+    li {
+      background: $second_color;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-bottom: 5px;
+      display: inline-block;
+      font-size: 0.9rem;
+      font-family: $consolas_font_family;
+    }
+  }
+}
+
+// Edit Form Styles
+.ant-form-item {
+  margin-bottom: 15px;
+}
+
+.ant-space {
+  display: flex;
+  align-items: center;
+}
+
+.ant-btn-dangerous {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+
+  &:hover {
+    background: darkred;
+  }
+}
+
+.ant-btn-primary {
+  background: $main_color_dark;
+  border: none;
+
+  &:hover {
+    background: darken($main_color_dark, 10%);
+  }
+}
+
+:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active a {
+  color: $main_color;
+}
+:where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover{
+    background-color: darken($main_color_dark, 10%);
+}
