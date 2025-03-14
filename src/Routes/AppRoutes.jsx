@@ -4,6 +4,7 @@ import HomePage from "../Pages/HomePageLayout.jsx";
 import YourInfo from "../Pages/YourInfo.jsx";
 import Orders from "../Pages/Orders.jsx";
 import Category from "../Pages/Category.jsx";
+import Stats from "../Pages/Stats.jsx";
 
 export default function AppRoutes() {
   return (
@@ -13,6 +14,7 @@ export default function AppRoutes() {
         <Route path={"/"} element={<YourInfo />} />
         <Route path={"/orders"} element={<Orders />} />
         <Route path={"/category"} element={<Category />} />
+        <Route path={"stats"} element={<Stats />} />
       </Route>
     </Routes>
   );

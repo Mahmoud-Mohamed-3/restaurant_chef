@@ -13,6 +13,9 @@ import {
   message,
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
+import { UpdateFoodApi } from "../API Calls/Category/UpdateFood.jsx";
+import { CreateFoodApi } from "../API Calls/Category/CreateFood.jsx";
+import { DeleteFoodApi } from "../API Calls/Category/DeleteFood.jsx";
 
 export default function Category() {
   const [cookies] = useCookies();
@@ -21,9 +24,30 @@ export default function Category() {
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
   const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
+  const [fileList, setFileList] = useState([]);
   const [form] = Form.useForm();
   const [imageUrl, setImageUrl] = useState(null); // to store the image URL for the dish
+  const handleFileChange = ({ fileList: newFileList }) => {
+    if (newFileList.length > 0) {
+      const newImageUrl = URL.createObjectURL(newFileList[0].originFileObj);
+      setImageUrl(newImageUrl);
+    }
 
+    setFileList(newFileList);
+  };
+  const beforeUpload = (file) => {
+    const isImage = file.type === "image/jpeg" || file.type === "image/png";
+    const isLt3M = file.size / 1024 / 1024 < 3;
+
+    if (!isImage) {
+      message.error("You can only upload JPG/PNG files!");
+    }
+    if (!isLt3M) {
+      message.error("File must be smaller than 3MB!");
+    }
+
+    return isImage && isLt3M;
+  };
   useEffect(() => {
     const getCategories = async () => {
       const response = await GetCategoryInfoApi(cookies.jwt);
@@ -50,6 +74,7 @@ export default function Category() {
       name: food.name,
       price: food.price,
       description: food.description,
+      image: food.image_url,
       ingredients: food.ingredients.map((ingredient) => ingredient.name),
     });
     setImageUrl(food.image_url);
@@ -59,7 +84,9 @@ export default function Category() {
   const handleEditModalClose = () => {
     setIsEditModalOpen(false);
     setSelectedFood(null);
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   const handleCreateModalOpen = () => {
@@ -69,21 +96,85 @@ export default function Category() {
   const handleCreateModalClose = () => {
     setIsCreateModalOpen(false);
     setImageUrl(null);
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
+  const handleEditSubmit = async (values) => {
+    const formData = new FormData();
+    formData.append("food[name]", values.name);
+    formData.append("food[price]", values.price);
+    formData.append("food[description]", values.description);
 
-  const handleEditSubmit = (values) => {
-    console.log("Updated Food:", { ...selectedFood, ...values });
+    // Ensure ingredients are passed as an array
+    if (Array.isArray(values.ingredients)) {
+      values.ingredients.forEach((ingredient, index) => {
+        formData.append(`food[ingredients][]`, ingredient);
+      });
+    } else {
+      formData.append("food[ingredients]", values.ingredients);
+    }
+
+    if (fileList.length > 0) {
+      formData.append("food[image]", fileList[0].originFileObj);
+    } else {
+      formData.append("food[image_url]", values.image_url);
+    }
+
+    const response = await UpdateFoodApi(
+      cookies.jwt,
+      selectedFood.id,
+      formData,
+    );
+
+    if (response) {
+      console.log("Food updated successfully");
+      message.success("Food updated successfully");
+    } else {
+      message.error("Failed to update food");
+    }
+
     handleEditModalClose();
   };
 
-  const handleCreateSubmit = (values) => {
-    console.log("Created Food:", { ...values, imageUrl });
+  const handleCreateSubmit = async (values) => {
+    const formData = new FormData();
+    formData.append("food[name]", values.name);
+    formData.append("food[price]", values.price);
+    formData.append("food[description]", values.description);
+
+    // Append ingredients properly
+    values.ingredients.forEach((ingredient) => {
+      formData.append("food[ingredients][]", ingredient);
+    });
+    if (fileList.length > 0) {
+      formData.append("food[image]", fileList[0].originFileObj);
+    }
+
+    const response = await CreateFoodApi(cookies.jwt, formData);
+    if (response) {
+      console.log("Food created successfully");
+      message.success("Food created successfully");
+    } else {
+      message.error("Failed to create food");
+    }
+
+    // Close modal after submission
     handleCreateModalClose();
   };
 
-  const handleDelete = (foodId) => {
+  const handleDelete = async (foodId) => {
     console.log("Delete food with ID:", foodId);
-    // Implement delete logic here
+    const response = await DeleteFoodApi(cookies.jwt, foodId);
+    if (response) {
+      console.log("Food deleted successfully");
+      message.success("Food deleted successfully");
+    } else {
+      message.error("Failed to delete food");
+    }
+    setTimeout(() => {
+      window.location.reload();
+    }, 500);
   };
 
   const handleAddIngredient = () => {
@@ -99,14 +190,14 @@ export default function Category() {
     }
   };
 
-  const handleImageUpload = ({ file }) => {
-    if (file.status === "done") {
-      setImageUrl(file.response?.url); // Assume the response contains the image URL
-    } else if (file.status === "error") {
-      message.error("Image upload failed.");
-    }
-    return false; // Prevent automatic upload by Ant Design's Upload component
-  };
+  // const handleImageUpload = async ({ file }) => {
+  //   if (file.status === "done") {
+  //     setImageUrl(file.response?.image_url); // Get the image URL from the backend response
+  //   } else if (file.status === "error") {
+  //     message.error("Image upload failed.");
+  //   }
+  //   return false; // Prevent automatic upload by Ant Design's Upload component
+  // };
 
   const columns = [
     {
@@ -124,18 +215,20 @@ export default function Category() {
       key: "actions",
       render: (_, record) => (
         <>
-          <Button
+          <button
+            className={"ViewButton"}
             onClick={() => showFoodDetails(record)}
             style={{ marginRight: 8 }}
           >
             View
-          </Button>
-          <Button
+          </button>
+          <button
+            className={"EditButton"}
             onClick={() => showEditModal(record)}
             style={{ marginRight: 8 }}
           >
             Edit
-          </Button>
+          </button>
           <Button
             onClick={() => handleDelete(record.id)}
             danger
@@ -203,10 +296,11 @@ export default function Category() {
           </Form.Item>
           <Form.Item label="Dish Image">
             <Upload
-              action="/upload" // Change this to the correct upload URL
-              listType="picture-card"
-              showUploadList={false}
-              customRequest={handleImageUpload}
+              fileList={fileList}
+              onChange={handleFileChange}
+              // beforeUpload={beforeUpload}
+              maxCount={1}
+              accept=".jpg,.jpeg,.png"
             >
               {imageUrl ? (
                 <img
@@ -233,7 +327,13 @@ export default function Category() {
                   {fields.map(({ key, name, ...restField }, index) => (
                     <Space
                       key={key}
-                      style={{ display: "flex", marginBottom: 8 }}
+                      style={{
+                        display: "flex",
+                        marginBottom: 8,
+                        width: "100%",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
                       align="baseline"
                     >
                       <Form.Item
@@ -266,7 +366,12 @@ export default function Category() {
             </Form.List>
           </Form.Item>
           <Form.Item>
-            <Button type="primary" htmlType="submit" style={{ marginRight: 8 }}>
+            <Button
+              type="primary"
+              htmlType="submit"
+              style={{ marginRight: 8 }}
+              // onClick={handleCreateSubmit}
+            >
               Save Dish
             </Button>
             <Button onClick={handleCreateModalClose}>Cancel</Button>
@@ -288,12 +393,13 @@ export default function Category() {
               alt={selectedFood.name}
               style={{
                 width: "100%",
+                objectFit: "cover",
                 borderRadius: "10px",
                 marginBottom: "10px",
               }}
             />
             <h3>Ingredients:</h3>
-            <ul>
+            <ul className={"IngredientsList"}>
               {selectedFood.ingredients.map((ingredient, index) => (
                 <li key={index}>{ingredient.name}</li>
               ))}
@@ -326,19 +432,26 @@ export default function Category() {
           </Form.Item>
           <Form.Item
             label="Description"
+            name="description"
             rules={[{ required: true, message: "Description is required" }]}
           >
             <Input.TextArea
               name="description"
-              value={selectedFood?.description}
+              value={
+                form.getFieldValue("description") || selectedFood?.description
+              }
+              onChange={(e) =>
+                form.setFieldsValue({ description: e.target.value })
+              }
             />
           </Form.Item>
           <Form.Item label="Dish Image">
             <Upload
-              action="/upload" // Change this to the correct upload URL
-              listType="picture-card"
-              showUploadList={false}
-              customRequest={handleImageUpload}
+              fileList={fileList}
+              onChange={handleFileChange}
+              beforeUpload={beforeUpload}
+              maxCount={1}
+              accept=".jpg,.jpeg,.png"
             >
               {imageUrl ? (
                 <img
@@ -353,6 +466,7 @@ export default function Category() {
               ) : (
                 <div>
                   <UploadOutlined />
+                  <UploadOutlined />
                   <div>Upload Image</div>
                 </div>
               )}
@@ -362,7 +476,7 @@ export default function Category() {
             <Form.List name="ingredients">
               {(fields, { add, remove }) => (
                 <div>
-                  {fields.map(({ key, name, ...restField }, index) => (
+                  {fields.map(({ key, name, index, ...restField }) => (
                     <Space
                       key={key}
                       style={{ display: "flex", marginBottom: 8 }}
@@ -380,7 +494,7 @@ export default function Category() {
                       <Button
                         type={"primary"}
                         danger
-                        onClick={() => handleRemoveIngredient(index)}
+                        onClick={() => handleRemoveIngredient(key)}
                       >
                         Remove
                       </Button>

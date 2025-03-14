@@ -36,10 +36,10 @@ export default function SideBar() {
       ? "orders"
       : path.includes("/category")
         ? "category"
-        : path === "/"
-          ? "profile"
-          : path.includes("/stats")
-            ? "stats"
+        : path.includes("/stats")
+          ? "stats"
+          : path === "/"
+            ? "profile"
             : activeLink;
 
     if (newActiveLink !== activeLink) {

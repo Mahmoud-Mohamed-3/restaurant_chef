@@ -15,8 +15,6 @@
     text-transform: uppercase;
   }
 
-
-
   .CreateButton {
     background-color: $main_color_dark;
     color: white;
@@ -25,8 +23,10 @@
     &:hover {
       background-color: darken($main_color_dark, 10%);
     }
-    :where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover{
-        background-color: darken($main_color_dark, 10%);
+    :where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(
+        :disabled
+      ):not(.ant-btn-disabled):hover {
+      background-color: darken($main_color_dark, 10%);
     }
   }
 
@@ -36,23 +36,49 @@
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-.Header{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-    align-items: center;
-  h2 {
-    font-size: 1.8rem;
-    font-family: $second_font_family;
-    padding-bottom: 15px;
-    text-align: center;
-    color: $second_color;
-  }
-}
-
+    .Header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h2 {
+        font-size: 1.8rem;
+        font-family: $second_font_family;
+        padding-bottom: 15px;
+        text-align: center;
+        color: $second_color;
+      }
+    }
 
     .ant-table {
       border-radius: 10px;
+
+      .ViewButton {
+        width: 50px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: dodgerblue;
+        border: none;
+        border-radius: 8px;
+        transition: 0.3s;
+
+        &:hover {
+          background-color: darken(dodgerblue, 10%);
+        }
+      }
+
+      .EditButton {
+        width: 50px;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #e4e403;
+        border: none;
+        border-radius: 8px;
+        transition: 0.3s;
+        &:hover {
+          background-color: darken(#e4e403, 10%);
+        }
+      }
     }
 
     .ant-table-thead > tr > th {
@@ -68,7 +94,8 @@
 }
 
 // Modals (View & Edit)
-.FoodDetails, .EditFoodModal {
+.FoodDetails,
+.EditFoodModal {
   h2 {
     font-size: 2.6rem;
     color: $black_color;
@@ -96,9 +123,10 @@
     list-style-type: none;
     padding: 0;
     display: flex;
-flex-direction: row;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 7px;
+    margin: 0 auto;
     li {
       background: $second_color;
       color: white;
@@ -110,6 +138,9 @@ flex-direction: row;
       font-family: $consolas_font_family;
     }
   }
+  //.IngredientsList{
+  //
+  //}
 }
 
 // Edit Form Styles
@@ -141,9 +172,13 @@ flex-direction: row;
   }
 }
 
-:where(.css-dev-only-do-not-override-240cud).ant-pagination .ant-pagination-item-active a {
+:where(.css-dev-only-do-not-override-240cud).ant-pagination
+  .ant-pagination-item-active
+  a {
   color: $main_color;
 }
-:where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(:disabled):not(.ant-btn-disabled):hover{
-    background-color: darken($main_color_dark, 10%);
+:where(.css-dev-only-do-not-override-240cud).ant-btn-variant-solid:not(
+    :disabled
+  ):not(.ant-btn-disabled):hover {
+  background-color: darken($main_color_dark, 10%);
 }

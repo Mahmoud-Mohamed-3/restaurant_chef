@@ -59,6 +59,32 @@
 .CategoryPage .CategoryContainer .ant-table {
   border-radius: 10px;
 }
+.CategoryPage .CategoryContainer .ant-table .ViewButton {
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CategoryPage .CategoryContainer .ant-table .ViewButton:hover {
+  background-color: #0077ea;
+}
+.CategoryPage .CategoryContainer .ant-table .EditButton {
+  width: 50px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #e4e403;
+  border: none;
+  border-radius: 8px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.CategoryPage .CategoryContainer .ant-table .EditButton:hover {
+  background-color: #b2b202;
+}
 .CategoryPage .CategoryContainer .ant-table-thead > tr > th {
   background-color: #ffbe33;
   color: white;
@@ -68,28 +94,32 @@
   font-size: 0.95rem;
 }
 
-.FoodDetails h2, .EditFoodModal h2 {
+.FoodDetails h2,
+.EditFoodModal h2 {
   font-size: 2.6rem;
   color: #242424;
   margin-bottom: 15px;
   font-family: "Dancing Script", cursive;
   text-align: center;
 }
-.FoodDetails img, .EditFoodModal img {
+.FoodDetails img,
+.EditFoodModal img {
   width: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
-.FoodDetails h3, .EditFoodModal h3 {
+.FoodDetails h3,
+.EditFoodModal h3 {
   font-size: 1.2rem;
   color: #ff6600;
   margin-top: 10px;
   text-align: center;
   margin-bottom: 12px;
 }
-.FoodDetails ul, .EditFoodModal ul {
+.FoodDetails ul,
+.EditFoodModal ul {
   list-style-type: none;
   padding: 0;
   display: -webkit-box;
@@ -102,8 +132,10 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 7px;
+  margin: 0 auto;
 }
-.FoodDetails ul li, .EditFoodModal ul li {
+.FoodDetails ul li,
+.EditFoodModal ul li {
   background: #ff6600;
   color: white;
   padding: 5px 10px;
